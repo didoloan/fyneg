@@ -8,23 +8,23 @@
         <div class="foot-content">
             <h3>Contact</h3>
             <ul>
-                <li><p><i class="material-icons"></i>08138754586</p></li>
-                <li><p><i class="material-icons"></i>support@gfynegold.com</p></li>
-                <li><p><i class="fas fa-map-marker-alt"></i>Apo District Abuja</p></li>
+                <li>08138754586</li>
+                <li>support@gfynegold.com</li>
+                <li>Apo District Abuja</li>
                 
             </ul>
         </div>
         <div class="foot-content">
             <h3>Links</h3>
             <ul>
-                <li>Home</li>
-                <li>Properties</li>
-                <li>About</li>
-                <li>Contact</li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/property">Properties</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
         </div>
-        <p>Copyright&copy; Fynegold Properties Ltd.</p>
+        <p>&copy; Fynegold Properties Ltd. All Rights Reserved.</p>
     </footer>
 </div>
     
@@ -57,29 +57,42 @@ footer {
     padding-top: 40px;
     padding-bottom: 40px;
 }
+
 footer > h3 {
     color: blue;
     padding-left: 20px;
     padding-right: 20px;
 }
+footer p {
+    /* color: #fff; */
+}
 footer input {
     text-indent: 12px; 
     font-size: 1.3em;
-    border: 0;
-    background-color: #999;
+    border: 2px solid #fff;
+    background-color: rgba(0, 0, 0, 0);
     border-radius: 12px 0 0 12px;
     height: 60px;
     width: 300px;
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+footer input:focus {
+    background-color: #fff;
 }
 footer button {
-    background-color: #9ccc65;
+    background-color: rgba(0, 0, 0, 0);
     color: white;
-    border: 0;
+    border: 2px solid #fff;
+    border-left:0;
     border-radius: 0 12px 12px 0;
     height: 60px;
     width: 100px;
     font-weight: bold;
     font-size: 1.3em;
+}
+footer button:hover {
+    background-color: #2b4c06;
 }
 #grid3 {
     display: grid;
@@ -93,6 +106,10 @@ footer button {
     font-size: 1.2em;
     text-align: left;
 }
+.foot-content h3{
+    text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff;
+    -webkit-font-smoothing: antialiased;
+}
 .footeritem {
     text-align: left;
 }
@@ -105,6 +122,11 @@ ul li{
     margin-top: 10px;
     font-family: "Fira Sans", sans-serif;
     color: white;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
 }
 @media only screen and (max-width: 640px) {
     #grid3 {

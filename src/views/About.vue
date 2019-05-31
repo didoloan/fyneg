@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <h1>About Fyne Gold Properties</h1>
+    <h1>About Fynegold Properties</h1>
     <p>Fyne Gold Properties is principally involved in the sale of lands and real estate development. Fyne Gold Properties has acquired large areas of land in the capital city of Abuja, The commercial hub of Nigeria, Lagos and the oil city of Port Harcourt. With plans to own lands in Warri. </p>
     <h2>Our Activities</h2>
     <ul>

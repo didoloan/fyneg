@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Product from './views/Product.vue'
+import Properties from './views/Properties.vue'
 
 Vue.use(Router)
 
@@ -14,9 +14,9 @@ export default new Router({
       component: Home
     },
     {
-      path:'/product',
-      name: 'product page',
-      component: Product
+      path:'/properties',
+      name: 'properties',
+      component: Properties
     },
     {
       path: '/about',
@@ -26,5 +26,9 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    // return desired position
+    return {x:0, y:0}
+  }
 })

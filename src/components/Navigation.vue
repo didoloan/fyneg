@@ -10,9 +10,6 @@
           <router-link to="/properties">Properties</router-link>
         </li>
         <li>
-          <router-link to="/invest">Invest</router-link>
-        </li>
-        <li>
           <router-link to="/about">About</router-link>
         </li>
         <li>
@@ -20,24 +17,19 @@
         </li>
       </ul>
     </header>
-      <header id="mobile">
+    <header id="mobile">
       <div id="logo"><button id="navbtn" @click="openNav"></button><h2>Fynegold</h2></div>
-      
-        
         <ul ref="navlinks">
-        <li>
-          <router-link @click="openNav" to="/">Home</router-link>
+        <li v-on:click="closeNav">
+          <router-link to="/">Home</router-link>
         </li>
-        <li>
-          <router-link @click="openNav" to="/properties">Properties</router-link>
+        <li @click="closeNav">
+          <router-link to="/properties">Properties</router-link>
         </li>
-        <li>
-          <router-link @click="openNav" to="/invest">Invest</router-link>
+        <li  @click="closeNav">
+          <router-link to="/about">About</router-link>
         </li>
-        <li>
-          <router-link @click="openNav" to="/about">About</router-link>
-        </li>
-        <li>
+        <li @click="closeNav">
           <router-link to="/contact">Contact</router-link>
         </li>
         </ul>
@@ -66,6 +58,10 @@ export default {
     openNav() {
       this.$refs.navlinks.style.display = this.$refs.navlinks.style.display !== "block"?"block":"none";
       // this.$refs.navlinks.style.display = "none";
+    },
+    closeNav() {
+      console.log("shrinking");
+      this.$refs.navlinks.style.display = "none";
     }
   }
 };
@@ -73,8 +69,15 @@ export default {
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap');
 
-#logo h2{
+*{
+  font-family: 'Ubuntu', sans-serif;
+}
+#logo{
+  margin: 0;
+}
+#logo h2 {
   float: right;
   color: white;
 }
@@ -83,9 +86,13 @@ header#desktop {
   grid-template-columns: 80px 1fr;
   grid-gap: 20px; 
   border-bottom-right-radius: 20px;
+  box-sizing: border-box;
 }
+
 header ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 header ul li {
   display: inline-block;
@@ -93,10 +100,14 @@ header ul li {
   text-decoration: none;
   color: brown;
 }
+header ul li a:hover {
+  color: #fff;
+}
 header ul li a {
   color: #aaa;
   font-size: 1.3em;
-  text-decoration: none
+  font-weight: bold;
+  text-decoration: none;
 }
 #mobile {
   display: none;
@@ -104,13 +115,10 @@ header ul li a {
 
 header {
   margin: 0;
-  padding: 30px;
-  /* background-color: rgba(0, 0, 0, 0.61); */
+  padding: 20px;
   background-color: black;
   height: auto;
-  /* box-shadow: 0 1px 10px #ccc; */
   text-align: left;
-  margin-bottom: 50px;
   z-index: 5;
   position: fixed;
   top:0;
@@ -121,10 +129,10 @@ button#navbtn {
   width: 60px;
   border: 0;
   background: url("../assets/menu.svg") no-repeat center;
-  color: black;
+  color: #fff;
 }
 header ul li a.router-link-exact-active {
-  text-shadow: 0 0 2px;
+  color: #fff;
 }
 
 
@@ -133,9 +141,11 @@ header ul li a.router-link-exact-active {
     display: block;
     position:fixed;
     background-color: black;
-    box-shadow: 0 1px 10px #999;
+    box-shadow: 0 1px 10px #ccc;
     width: 100%;
     min-height: 80px;
+    box-sizing: border-box;
+    padding: 10px;
   }
   header#mobile button {
     display: table-cell;

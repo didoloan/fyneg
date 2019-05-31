@@ -29,15 +29,15 @@ export default {
 </script>
 
 <style>
-@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+/*@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");*/
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans|Playfair+Display|Roboto&display=swap");
 @import url("./assets/animate.css");
 @import url("https://use.fontawesome.com/releases/v5.8.2/css/all.css")
 
 * {
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   box-sizing: border-box;
-  outline-width: 0;
+  outline: transparent;
 }
 body {
   margin: 0;
